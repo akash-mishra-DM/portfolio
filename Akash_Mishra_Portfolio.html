@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akash Mishra — Social Media Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --bg2: #111111;
+    --bg3: #181818;
+    --card: #141414;
+    --border: rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.12);
+    --text: #f0ede8;
+    --muted: #888880;
+    --accent: #c8f060;
+    --accent2: #f0c060;
+    --linkedin: #0A66C2;
+    --facebook: #1877F2;
+    --youtube: #FF0000;
+    --google: #4285F4;
+    --instagram: #E1306C;
+    --tiktok: #69C9D0;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+  h1,h2,h3,h4 { font-family: 'Syne', sans-serif; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 3rem;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 0.5px solid var(--border);
+  }
+  .nav-logo { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.1rem; letter-spacing: -0.02em; }
+  .nav-logo span { color: var(--accent); }
+  nav ul { list-style: none; display: flex; gap: 2rem; }
+  nav a { color: var(--muted); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+  nav a:hover { color: var(--text); }
+
+  /* SECTIONS */
+  section { padding: 7rem 3rem; max-width: 1100px; margin: 0 auto; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center;
+    padding-top: 8rem; padding-bottom: 5rem;
+    max-width: 1100px; margin: 0 auto; padding-left: 3rem; padding-right: 3rem;
+    position: relative;
+  }
+  .hero-tag {
+    display: inline-block;
+    background: rgba(200,240,96,0.1);
+    border: 0.5px solid rgba(200,240,96,0.3);
+    color: var(--accent);
+    font-size: 0.78rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 0.4rem 1rem; border-radius: 100px;
+    margin-bottom: 2rem;
+  }
+  .hero h1 {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 800; line-height: 1.0;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 .line2 { color: var(--accent); display: block; }
+  .hero-sub {
+    font-size: 1.1rem; color: var(--muted);
+    max-width: 560px; margin-bottom: 3rem; line-height: 1.7;
+  }
+  .hero-stats {
+    display: flex; gap: 3rem; margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+  .hero-stat { border-left: 2px solid var(--accent); padding-left: 1rem; }
+  .hero-stat .num { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--text); line-height: 1; }
+  .hero-stat .lbl { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
+  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--accent); color: #0a0a0a;
+    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.875rem;
+    padding: 0.8rem 2rem; border-radius: 6px; text-decoration: none;
+    transition: opacity 0.2s; letter-spacing: 0.02em;
+  }
+  .btn-primary:hover { opacity: 0.85; }
+  .btn-secondary {
+    background: transparent; color: var(--text);
+    font-family: 'Syne', sans-serif; font-weight: 600; font-size: 0.875rem;
+    padding: 0.8rem 2rem; border-radius: 6px; text-decoration: none;
+    border: 0.5px solid var(--border2);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .btn-secondary:hover { border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.04); }
+
+  /* SECTION LABELS */
+  .section-label {
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 1rem;
+  }
+  .section-title {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 800; letter-spacing: -0.02em; line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  .section-sub { color: var(--muted); max-width: 520px; margin-bottom: 3.5rem; font-size: 1rem; }
+
+  /* DIVIDER */
+  .full-divider { border: none; border-top: 0.5px solid var(--border); margin: 0; }
+
+  /* PROCESS */
+  .process-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5px;
+    background: var(--border); border: 0.5px solid var(--border); border-radius: 12px; overflow: hidden;
+    margin-top: 1rem;
+  }
+  .process-card {
+    background: var(--card); padding: 2rem 1.8rem;
+    transition: background 0.2s;
+  }
+  .process-card:hover { background: var(--bg3); }
+  .process-num { font-family: 'Syne', sans-serif; font-size: 0.72rem; color: var(--accent); letter-spacing: 0.1em; margin-bottom: 1rem; }
+  .process-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .process-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.6; }
+
+  /* SAO DIGITAL CASE STUDY */
+  .case-header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    flex-wrap: wrap; gap: 1.5rem; margin-bottom: 3rem;
+    padding: 2.5rem; background: var(--card); border-radius: 12px; border: 0.5px solid var(--border);
+  }
+  .case-meta { }
+  .case-meta .company { font-family: 'Syne', sans-serif; font-size: 1.8rem; font-weight: 800; }
+  .case-meta .role { color: var(--muted); font-size: 0.9rem; margin-top: 0.3rem; }
+  .case-badge {
+    background: rgba(200,240,96,0.08); border: 0.5px solid rgba(200,240,96,0.2);
+    color: var(--accent); padding: 0.5rem 1.2rem; border-radius: 100px;
+    font-size: 0.8rem; font-weight: 500; letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  .platforms-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;
+  }
+  .platform-card {
+    background: var(--card); border-radius: 12px; border: 0.5px solid var(--border);
+    padding: 1.8rem; transition: border-color 0.2s, transform 0.2s;
+    position: relative; overflow: hidden;
+  }
+  .platform-card:hover { border-color: var(--border2); transform: translateY(-2px); }
+  .platform-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  }
+  .platform-card.li::before { background: var(--linkedin); }
+  .platform-card.fb::before { background: var(--facebook); }
+  .platform-card.yt::before { background: var(--youtube); }
+  .platform-card.gb::before { background: var(--google); }
+  .platform-card.ig::before { background: var(--instagram); }
+  .platform-card.tt::before { background: var(--tiktok); }
+
+  .plat-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
+  .plat-icon {
+    width: 36px; height: 36px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; font-weight: 800; color: #fff;
+    font-family: 'Syne', sans-serif; flex-shrink: 0;
+  }
+  .plat-icon.li { background: var(--linkedin); }
+  .plat-icon.fb { background: var(--facebook); }
+  .plat-icon.yt { background: var(--youtube); }
+  .plat-icon.gb { background: var(--google); }
+  .plat-icon.ig { background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+  .plat-icon.tt { background: #010101; border: 0.5px solid var(--border2); color: var(--tiktok); }
+  .plat-name { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; }
+
+  .metrics-list { display: flex; flex-direction: column; gap: 0.6rem; }
+  .metric-row {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 0.5rem 0; border-bottom: 0.5px solid var(--border);
+  }
+  .metric-row:last-child { border-bottom: none; }
+  .metric-label { font-size: 0.8rem; color: var(--muted); }
+  .metric-val { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--text); }
+  .metric-val.up { color: var(--accent); }
+
+  /* RR BLESSING */
+  .rr-card {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+    background: var(--card); border-radius: 12px; border: 0.5px solid var(--border);
+    padding: 2.5rem; margin-top: 1rem;
+  }
+  .rr-left h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.4rem; }
+  .rr-left .rr-meta { color: var(--muted); font-size: 0.875rem; margin-bottom: 1.5rem; }
+  .rr-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+  .rr-list li { display: flex; gap: 0.75rem; font-size: 0.9rem; align-items: flex-start; }
+  .rr-list li::before { content: '→'; color: var(--accent); flex-shrink: 0; margin-top: 0.05em; }
+  .rr-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+  .tag {
+    background: rgba(255,255,255,0.05); border: 0.5px solid var(--border2);
+    color: var(--muted); font-size: 0.75rem; padding: 0.3rem 0.75rem; border-radius: 100px;
+  }
+  .rr-right { display: flex; flex-direction: column; gap: 1rem; }
+  .rr-stat-box {
+    background: var(--bg3); border-radius: 8px; border: 0.5px solid var(--border);
+    padding: 1.2rem 1.4rem;
+  }
+  .rr-stat-box .rb-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.3rem; }
+  .rr-stat-box .rb-val { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--accent); }
+
+  /* PROJECTS */
+  .projects-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem;
+  }
+  .proj-card {
+    background: var(--card); border-radius: 12px; border: 0.5px solid var(--border);
+    padding: 1.8rem; transition: border-color 0.2s, transform 0.2s;
+  }
+  .proj-card:hover { border-color: var(--border2); transform: translateY(-2px); }
+  .proj-tag {
+    display: inline-block;
+    font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+    padding: 0.25rem 0.7rem; border-radius: 100px; margin-bottom: 1rem;
+  }
+  .proj-tag.social { background: rgba(200,240,96,0.1); color: var(--accent); border: 0.5px solid rgba(200,240,96,0.2); }
+  .proj-tag.seo { background: rgba(240,192,96,0.1); color: var(--accent2); border: 0.5px solid rgba(240,192,96,0.2); }
+  .proj-tag.paid { background: rgba(105,201,208,0.1); color: var(--tiktok); border: 0.5px solid rgba(105,201,208,0.2); }
+  .proj-tag.email { background: rgba(30,144,255,0.1); color: #5aadff; border: 0.5px solid rgba(30,144,255,0.2); }
+  .proj-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
+  .proj-date { font-size: 0.78rem; color: var(--muted); margin-bottom: 1rem; }
+  .proj-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .proj-card li { font-size: 0.85rem; color: var(--muted); display: flex; gap: 0.5rem; }
+  .proj-card li::before { content: '·'; color: var(--accent); }
+
+  /* TOOLS */
+  .tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .tools-col h3 { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.8rem; }
+  .tool-pills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .tool-pill {
+    background: var(--card); border: 0.5px solid var(--border2);
+    color: var(--text); font-size: 0.85rem; padding: 0.45rem 1rem; border-radius: 6px;
+    transition: border-color 0.2s;
+  }
+  .tool-pill:hover { border-color: rgba(200,240,96,0.4); color: var(--accent); }
+  .certs-list { display: flex; flex-direction: column; gap: 0.75rem; }
+  .cert-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 1.2rem; background: var(--card); border-radius: 8px; border: 0.5px solid var(--border);
+    gap: 1rem;
+  }
+  .cert-name { font-size: 0.875rem; font-weight: 500; }
+  .cert-org { font-size: 0.78rem; color: var(--muted); margin-top: 0.15rem; }
+  .cert-date { font-size: 0.75rem; color: var(--muted); white-space: nowrap; }
+
+  /* EARLY INTERNSHIP */
+  .early-card {
+    background: var(--card); border-radius: 12px; border: 0.5px solid var(--border); padding: 2.5rem;
+  }
+  .early-card h3 { font-size: 1.2rem; font-weight: 800; margin-bottom: 0.3rem; }
+  .early-card .e-meta { color: var(--muted); font-size: 0.875rem; margin-bottom: 1.5rem; }
+  .early-card ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .early-card li { font-size: 0.9rem; color: var(--muted); display: flex; gap: 0.75rem; }
+  .early-card li::before { content: '→'; color: var(--accent); flex-shrink: 0; }
+
+  /* CTA */
+  .cta-section {
+    background: var(--card); border-radius: 16px; border: 0.5px solid var(--border);
+    padding: 5rem 3rem; text-align: center;
+  }
+  .cta-section h2 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 1rem; }
+  .cta-section h2 span { color: var(--accent); }
+  .cta-section p { color: var(--muted); max-width: 480px; margin: 0 auto 2.5rem; }
+  .cta-btns { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+  /* FOOTER */
+  footer {
+    border-top: 0.5px solid var(--border); padding: 2rem 3rem;
+    display: flex; justify-content: space-between; align-items: center;
+    color: var(--muted); font-size: 0.8rem; flex-wrap: wrap; gap: 1rem;
+  }
+  footer a { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+  footer a:hover { color: var(--text); }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeUp 0.7s ease both; }
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.2s; }
+  .delay-3 { animation-delay: 0.3s; }
+  .delay-4 { animation-delay: 0.4s; }
+
+  /* SCROLL DOWN */
+  .scroll-down {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    margin-top: 2.5rem; text-decoration: none;
+    color: var(--muted); font-size: 0.8rem; letter-spacing: 0.08em;
+    text-transform: uppercase; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .scroll-down:hover { color: var(--accent); }
+  .scroll-arrow {
+    width: 28px; height: 28px; border-radius: 50%;
+    border: 0.5px solid var(--border2);
+    display: flex; align-items: center; justify-content: center;
+    animation: bounce 2s ease-in-out infinite;
+    transition: border-color 0.2s;
+  }
+  .scroll-down:hover .scroll-arrow { border-color: var(--accent); }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(4px); }
+  }
+
+  /* GRID NOISE BG */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: -1;
+    background-image:
+      linear-gradient(rgba(200,240,96,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,240,96,0.02) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    nav ul { display: none; }
+    section { padding: 5rem 1.5rem; }
+    .hero { padding: 7rem 1.5rem 4rem; }
+    .rr-card { grid-template-columns: 1fr; }
+    .tools-grid { grid-template-columns: 1fr; }
+    .hero-stats { gap: 1.5rem; }
+    footer { padding: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Akash<span>.</span></div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#internships">Internships</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag fade-up">Available for full-time roles</div>
+  <h1 class="fade-up delay-1">Social Media<span class="line2">Manager.</span></h1>
+  <p class="hero-sub fade-up delay-2">I build organic social media systems that grow brands across platforms — from content strategy and calendars to analytics and execution. Based in Kolkata.</p>
+  <div class="hero-stats fade-up delay-3">
+    <div class="hero-stat">
+      <div class="num">243%</div>
+      <div class="lbl">LinkedIn impression growth</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">77,633%</div>
+      <div class="lbl">YouTube view growth</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">6 Brands</div>
+      <div class="lbl">managed simultaneously</div>
+    </div>
+    <div class="hero-stat">
+      <div class="num">66,033</div>
+      <div class="lbl">total Facebook media views</div>
+    </div>
+  </div>
+  <div class="hero-cta fade-up delay-4">
+    <a href="https://drive.google.com/drive/folders/1QM_z5w6xiU31W_uf-c1y5R3_N9vbEbkh?usp=sharing" target="_blank" class="btn-primary">View My Work</a>
+  </div>
+  <a href="#contact" class="scroll-down fade-up delay-4">
+    <span>Scroll to contact</span>
+    <div class="scroll-arrow">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 3v10M3 9l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </a>
+</div>
+
+<hr class="full-divider">
+
+<!-- ABOUT / PROCESS -->
+<section id="about">
+  <p class="section-label">How I work</p>
+  <h2 class="section-title">My Process</h2>
+  <p class="section-sub">From research to results — here's how I approach every brand I manage.</p>
+  <div class="process-grid">
+    <div class="process-card">
+      <div class="process-num">01</div>
+      <h4>Audit & Research</h4>
+      <p>Competitor research, positioning analysis, content gap assessment, and platform-specific audience behaviour review.</p>
+    </div>
+    <div class="process-card">
+      <div class="process-num">02</div>
+      <h4>Strategy & Calendar</h4>
+      <p>Monthly content calendars aligned with brand voice, platform algorithms, and campaign goals — built in Notion.</p>
+    </div>
+    <div class="process-card">
+      <div class="process-num">03</div>
+      <h4>Create & Publish</h4>
+      <p>Platform-optimised copy, detailed creative briefs for designers, daily publishing across all active accounts.</p>
+    </div>
+    <div class="process-card">
+      <div class="process-num">04</div>
+      <h4>Analyse & Optimise</h4>
+      <p>Weekly and monthly performance tracking — impressions, reach, engagement, clicks — and strategy refinement.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="full-divider">
+
+<!-- SAO DIGITAL -->
+<section id="internships">
+  <p class="section-label">Internship 01 — Primary Case Study</p>
+  <h2 class="section-title">Sao Digital</h2>
+  <p class="section-sub">Sep 2025 – Dec 2025 · Virtual (Melbourne, VIC) · Social Media Manager Intern</p>
+
+  <div class="case-header">
+    <div class="case-meta">
+      <div class="company">6 Brands. 8 Platforms. 4 Months.</div>
+      <div class="role">Managed organic social media across Facebook (3 pages), Instagram (2 accounts), LinkedIn, Google Business, TikTok, and YouTube — simultaneously.</div>
+    </div>
+    <div class="case-badge">Sep 2025 – Dec 2025</div>
+  </div>
+
+  <div class="platforms-grid">
+
+    <div class="platform-card li">
+      <div class="plat-header">
+        <div class="plat-icon li">in</div>
+        <div class="plat-name">LinkedIn</div>
+      </div>
+      <div class="metrics-list">
+        <div class="metric-row"><span class="metric-label">Post activity growth</span><span class="metric-val up">+425%</span></div>
+        <div class="metric-row"><span class="metric-label">Impressions growth</span><span class="metric-val up">+243%</span></div>
+        <div class="metric-row"><span class="metric-label">Reach increase</span><span class="metric-val up">+143%</span></div>
+        <div class="metric-row"><span class="metric-label">Profile click growth</span><span class="metric-val up">+200%</span></div>
+        <div class="metric-row"><span class="metric-label">New followers (I THINK Financial)</span><span class="metric-val up">+17 (+183%)</span></div>
+      </div>
+    </div>
+
+    <div class="platform-card fb">
+      <div class="plat-header">
+        <div class="plat-icon fb">f</div>
+        <div class="plat-name">Facebook</div>
+      </div>
+      <div class="metrics-list">
+        <div class="metric-row"><span class="metric-label">Content output growth</span><span class="metric-val up">+203%</span></div>
+        <div class="metric-row"><span class="metric-label">Total posts/reels</span><span class="metric-val">106 published</span></div>
+        <div class="metric-row"><span class="metric-label">Total media views</span><span class="metric-val">66,033</span></div>
+        <div class="metric-row"><span class="metric-label">Media views growth</span><span class="metric-val up">+40%</span></div>
+        <div class="metric-row"><span class="metric-label">Total reactions (↑35%)</span><span class="metric-val">495 reactions</span></div>
+      </div>
+    </div>
+
+    <div class="platform-card yt">
+      <div class="plat-header">
+        <div class="plat-icon yt">▶</div>
+        <div class="plat-name">YouTube</div>
+      </div>
+      <div class="metrics-list">
+        <div class="metric-row"><span class="metric-label">View growth</span><span class="metric-val up">+77,633%</span></div>
+        <div class="metric-row"><span class="metric-label">Total views</span><span class="metric-val">2,332 views</span></div>
+        <div class="metric-row"><span class="metric-label">Total watch time</span><span class="metric-val">332 minutes</span></div>
+        <div class="metric-row"><span class="metric-label">Total likes</span><span class="metric-val">31 likes</span></div>
+        <div class="metric-row"><span class="metric-label">Posts published</span><span class="metric-val">11 posts</span></div>
+      </div>
+    </div>
+
+    <div class="platform-card gb">
+      <div class="plat-header">
+        <div class="plat-icon gb">G</div>
+        <div class="plat-name">Google Business</div>
+      </div>
+      <div class="metrics-list">
+        <div class="metric-row"><span class="metric-label">Search impressions (↑94%)</span><span class="metric-val">1,264 searches</span></div>
+        <div class="metric-row"><span class="metric-label">Call clicks (↑30%)</span><span class="metric-val">95 calls</span></div>
+        <div class="metric-row"><span class="metric-label">Website clicks (↑21%)</span><span class="metric-val">97 clicks</span></div>
+        <div class="metric-row"><span class="metric-label">Direction requests (↑21%)</span><span class="metric-val">189 requests</span></div>
+      </div>
+    </div>
+
+    <div class="platform-card ig">
+      <div class="plat-header">
+        <div class="plat-icon ig">◉</div>
+        <div class="plat-name">Instagram</div>
+      </div>
+      <div class="metrics-list">
+        <div class="metric-row"><span class="metric-label">Total posts published</span><span class="metric-val">41 posts</span></div>
+        <div class="metric-row"><span class="metric-label">Post growth</span><span class="metric-val up">+52%</span></div>
+        <div class="metric-row"><span class="metric-label">Account status</span><span class="metric-val">Newly launched</span></div>
+        <div class="metric-row"><span class="metric-label">Accounts managed</span><span class="metric-val">2 accounts</span></div>
+      </div>
+    </div>
+
+    <div class="platform-card tt">
+      <div class="plat-header">
+        <div class="plat-icon tt">T</div>
+        <div class="plat-name">TikTok</div>
+      </div>
+      <div class="metrics-list">
+        <div class="metric-row"><span class="metric-label">Videos published</span><span class="metric-val">7 videos</span></div>
+        <div class="metric-row"><span class="metric-label">Total video views</span><span class="metric-val up">480 views</span></div>
+        <div class="metric-row"><span class="metric-label">Account status</span><span class="metric-val">Newly launched</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="full-divider">
+
+<!-- RR BLESSING -->
+<section>
+  <p class="section-label">Internship 02</p>
+  <h2 class="section-title">RR Blessing</h2>
+  <p class="section-sub">Feb 2026 – Mar 2026 · Kolkata · Social Media Manager Intern</p>
+
+  <div class="rr-card">
+    <div class="rr-left">
+      <h3>Brand Positioning & Content Strategy</h3>
+      <p class="rr-meta">Full social media management for a Kolkata-based brand — from profile optimisation to daily content publishing.</p>
+      <ul class="rr-list">
+        <li>Rewrote SEO-optimised bio to improve discoverability and profile positioning across platforms.</li>
+        <li>Developed a full content strategy aligned with brand identity and target audience behaviour.</li>
+        <li>Planned and published daily content — static posts, carousel creatives, and short-form reels.</li>
+        <li>Maintained consistent brand messaging, visual aesthetics, and storytelling across all platforms.</li>
+      </ul>
+      <div class="rr-tags">
+        <span class="tag">Instagram</span>
+        <span class="tag">Content Strategy</span>
+        <span class="tag">Reels</span>
+        <span class="tag">Carousels</span>
+        <span class="tag">SEO Bio</span>
+        <span class="tag">Canva</span>
+      </div>
+    </div>
+    <div class="rr-right">
+      <div class="rr-stat-box">
+        <div class="rb-label">Content Types</div>
+        <div class="rb-val">3 Formats</div>
+        <div style="color:var(--muted);font-size:0.8rem;margin-top:0.3rem;">Static · Carousel · Reels</div>
+      </div>
+      <div class="rr-stat-box">
+        <div class="rb-label">Publishing Cadence</div>
+        <div class="rb-val">Daily</div>
+        <div style="color:var(--muted);font-size:0.8rem;margin-top:0.3rem;">Consistent across all platforms</div>
+      </div>
+      <div class="rr-stat-box">
+        <div class="rb-label">Core Focus</div>
+        <div class="rb-val">Brand Positioning</div>
+        <div style="color:var(--muted);font-size:0.8rem;margin-top:0.3rem;">SEO · Storytelling · Aesthetics</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="full-divider">
+
+<!-- PROJECTS -->
+<section id="projects">
+  <p class="section-label">Academic & Course Projects</p>
+  <h2 class="section-title">Strategy Work</h2>
+  <p class="section-sub">Real briefs, real strategy — projects completed across digital marketing, paid ads, SEO, and email automation.</p>
+  <div class="projects-grid">
+
+    <div class="proj-card">
+      <span class="proj-tag social">Social Media</span>
+      <h4>360° Marketing Strategy — Zepto</h4>
+      <p class="proj-date">Jul 2025</p>
+      <ul>
+        <li>Integrated digital plan: social, paid ads, SEO, and app marketing</li>
+        <li>Campaign concepts combining online and offline engagement</li>
+        <li>Full channel strategy with audience segmentation</li>
+      </ul>
+    </div>
+
+    <div class="proj-card">
+      <span class="proj-tag social">Social Media</span>
+      <h4>Social Media Strategy — Just Herbs</h4>
+      <p class="proj-date">Apr 2025</p>
+      <ul>
+        <li>Instagram and Facebook content audit and gap analysis</li>
+        <li>3-month content calendar for brand awareness and conversion</li>
+        <li>Platform-specific content formats and copy direction</li>
+      </ul>
+    </div>
+
+    <div class="proj-card">
+      <span class="proj-tag seo">SEO</span>
+      <h4>Website & SEO — Made With Spin</h4>
+      <p class="proj-date">Mar 2025</p>
+      <ul>
+        <li>Built WordPress site with Elementor; connected GA4 & Search Console</li>
+        <li>3-month SEO plan with blog topics and link building</li>
+        <li>Conversion tracking and performance reporting setup</li>
+      </ul>
+    </div>
+
+    <div class="proj-card">
+      <span class="proj-tag email">Email Marketing</span>
+      <h4>Email Automation Funnel — GetResponse</h4>
+      <p class="proj-date">Dec 2024</p>
+      <ul>
+        <li>Designed 3-email automated funnel from scratch</li>
+        <li>Achieved 67–74% open rates and 23–33% CTR</li>
+        <li>A/B tested subject lines, CTAs, and personalisation</li>
+      </ul>
+    </div>
+
+    <div class="proj-card">
+      <span class="proj-tag paid">Paid Ads</span>
+      <h4>Google Ads — Search Campaign</h4>
+      <p class="proj-date">Nov 2024</p>
+      <ul>
+        <li>Planned campaign with high-volume, low-CPC keywords</li>
+        <li>Improved Quality Score and CTR through keyword-ad alignment</li>
+        <li>Landing page optimisation for conversion</li>
+      </ul>
+    </div>
+
+    <div class="proj-card">
+      <span class="proj-tag paid">Paid Ads</span>
+      <h4>Facebook Ads Campaign</h4>
+      <p class="proj-date">Oct 2024</p>
+      <ul>
+        <li>₹500 budget · ~10,000 impressions · 249 link clicks</li>
+        <li>Built audience targeting and creative testing framework</li>
+        <li>Placement optimisation across Facebook and Instagram</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<hr class="full-divider">
+
+<!-- TOOLS & CERTS -->
+<section id="tools">
+  <p class="section-label">Skills & Credentials</p>
+  <h2 class="section-title">Tools & Certifications</h2>
+  <p class="section-sub">Platforms and tools I use daily, plus credentials I've earned.</p>
+  <div class="tools-grid">
+    <div class="tools-col">
+      <h3>Tools & Platforms</h3>
+      <div class="tool-pills">
+        <span class="tool-pill">Canva</span>
+        <span class="tool-pill">Meta Business Suite</span>
+        <span class="tool-pill">Facebook Ads Manager</span>
+        <span class="tool-pill">Google Analytics</span>
+        <span class="tool-pill">Google Search Console</span>
+        <span class="tool-pill">WordPress</span>
+        <span class="tool-pill">Elementor</span>
+        <span class="tool-pill">GetResponse</span>
+        <span class="tool-pill">SimilarWeb</span>
+        <span class="tool-pill">Notion</span>
+        <span class="tool-pill">ChatGPT</span>
+        <span class="tool-pill">Gemini</span>
+        <span class="tool-pill">Google Skillshop</span>
+      </div>
+    </div>
+    <div class="tools-col">
+      <h3>Certifications</h3>
+      <div class="certs-list">
+        <div class="cert-item">
+          <div>
+            <div class="cert-name">Social Media Marketing</div>
+            <div class="cert-org">HubSpot Academy</div>
+          </div>
+          <div class="cert-date">Jan 2026</div>
+        </div>
+        <div class="cert-item">
+          <div>
+            <div class="cert-name">Digital Marketing Placement Guarantee</div>
+            <div class="cert-org">Internshala</div>
+          </div>
+          <div class="cert-date">Mar–Jul 2025</div>
+        </div>
+        <div class="cert-item">
+          <div>
+            <div class="cert-name">Google Search & Display Ads</div>
+            <div class="cert-org">Google Skillshop</div>
+          </div>
+          <div class="cert-date">Sep 2024</div>
+        </div>
+        <div class="cert-item">
+          <div>
+            <div class="cert-name">Certification in Digital Marketing</div>
+            <div class="cert-org">UpGrad</div>
+          </div>
+          <div class="cert-date">Sep 2023–Feb 2024</div>
+        </div>
+        <div class="cert-item">
+          <div>
+            <div class="cert-name">Facebook & Instagram Ads</div>
+            <div class="cert-org">Indian Institute of Digital Education</div>
+          </div>
+          <div class="cert-date">May 2023</div>
+        </div>
+        <div class="cert-item">
+          <div>
+            <div class="cert-name">Ethics in the Age of Generative AI</div>
+            <div class="cert-org">LinkedIn Learning</div>
+          </div>
+          <div class="cert-date">—</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="full-divider">
+
+<!-- EARLY INTERNSHIP -->
+<section>
+  <p class="section-label">Earlier Experience</p>
+  <h2 class="section-title">Digital Marketing Internship</h2>
+  <p class="section-sub">Apr 2023 – May 2023 · Indian Institute of Digital Education · Virtual</p>
+  <div class="early-card">
+    <h3>Digital Marketing</h3>
+    <p class="e-meta">Apr 2023 – May 2023 · Indian Institute of Digital Education · Virtual</p>
+    <ul>
+      <li>Created SEO-optimised blog content using keyword research and on-page best practices.</li>
+      <li>Analysed 50+ websites using SimilarWeb for competitor and outreach research.</li>
+      <li>Executed backlink generation and content distribution for organic traffic growth.</li>
+      <li>Co-led a 6-member team to design a full-funnel social media campaign for a Mother's Day concept.</li>
+    </ul>
+  </div>
+</section>
+
+<hr class="full-divider">
+
+<!-- CTA -->
+<section id="contact" style="padding-top: 4rem; padding-bottom: 6rem;">
+  <div class="cta-section">
+    <h2>Let's Grow Your Brand<br><span>on Social Media.</span></h2>
+    <p>I help brands build consistent, data-driven organic presence across Instagram, LinkedIn, Facebook, YouTube, and more.</p>
+    <div class="cta-btns">
+      <a href="mailto:akashmishra1445@gmail.com" class="btn-primary">akashmishra1445@gmail.com</a>
+      <a href="https://www.linkedin.com/in/akashmishra-smm/" target="_blank" class="btn-secondary">LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>© 2026 Akash Mishra. Kolkata, India.</div>
+  <div style="display:flex;gap:1.5rem;">
+    <a href="mailto:akashmishra1445@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/akashmishra-smm/" target="_blank">LinkedIn</a>
+    <a href="tel:+916291552568">+91 6291552568</a>
+  </div>
+</footer>
+
+</body>
+</html>
