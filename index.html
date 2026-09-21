@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Akash Mishra – Social media and digital marketing portfolio</title>
+<meta name="description" content="Akash Mishra plans, publishes and measures social media for small brands. Case studies, results, and how he uses AI tools to work faster.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F6F8FC;
+    --surface: #FFFFFF;
+    --ink: #0E1E45;
+    --muted: #4B5A7C;
+    --line: #D8DFEE;
+    --blue: #1F3FD1;
+    --blue-ink: #FFFFFF;
+    --yellow: #FFC61A;
+    --delta-bg: #FFF1BF;
+    --delta-ink: #0E1E45;
+    --video: #0E1E45;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0A1128;
+      --surface: #121B3A;
+      --ink: #EAF0FF;
+      --muted: #A9B6D6;
+      --line: #26325C;
+      --blue: #8EA4FF;
+      --blue-ink: #0A1128;
+      --yellow: #FFC61A;
+      --delta-bg: #3B3213;
+      --delta-ink: #FFE08A;
+      --video: #EAF0FF;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0A1128;
+    --surface: #121B3A;
+    --ink: #EAF0FF;
+    --muted: #A9B6D6;
+    --line: #26325C;
+    --blue: #8EA4FF;
+    --blue-ink: #0A1128;
+    --yellow: #FFC61A;
+    --delta-bg: #3B3213;
+    --delta-ink: #FFE08A;
+    --video: #EAF0FF;
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
+  *, *::before, *::after { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin: 0;
+  }
+  p { margin: 0 0 1rem; max-width: 66ch; }
+  a { color: var(--blue); text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+  :focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 4px; }
+  ul { padding: 0; margin: 0; list-style: none; }
+
+  .wrap {
+    max-width: 1040px;
+    margin-inline: auto;
+    padding-inline: max(clamp(1rem, 4vw, 2rem), env(safe-area-inset-left, 0px));
+  }
+
+  /* header */
+  .site-header {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 10;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+  .site-header .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem 1.5rem; padding-block: .8rem; }
+  .brand { font-family: "Bricolage Grotesque", system-ui, sans-serif; font-weight: 800; font-size: 1.15rem; color: var(--ink); text-decoration: none; }
+  .site-nav ul { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; }
+  .site-nav a { color: var(--muted); text-decoration: none; font-size: .95rem; font-weight: 500; }
+  .site-nav a:hover { color: var(--ink); text-decoration: underline; }
+
+  /* hero */
+  .hero { padding-block: clamp(2.5rem, 7vw, 5rem) clamp(2.5rem, 6vw, 4.5rem); }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+  .hero h1 { font-weight: 800; font-size: clamp(2.3rem, 5.6vw, 3.9rem); }
+  .hero .lead { font-size: 1.2rem; color: var(--muted); margin-top: 1.4rem; }
+  .cta-row { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.75rem; }
+  .btn {
+    display: inline-block;
+    padding: .7rem 1.25rem;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 2px solid var(--blue);
+    color: var(--blue);
+    background: transparent;
+  }
+  .btn:hover { text-decoration: none; background: color-mix(in srgb, var(--blue) 10%, transparent); }
+  .btn.primary { background: var(--blue); color: var(--blue-ink); }
+  .btn.primary:hover { background: var(--blue); filter: brightness(1.08); }
+  .status { margin: 1.25rem 0 0; color: var(--muted); font-size: .95rem; }
+
+  /* calendar visual */
+  .cal-card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 1.1rem 1.1rem .9rem; }
+  .cal-title { font-family: "Bricolage Grotesque", system-ui, sans-serif; font-weight: 600; font-size: 1rem; margin: 0 0 .75rem; }
+  .cal { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
+  .cal .dow { text-align: center; font-size: .72rem; color: var(--muted); padding-bottom: 2px; }
+  .cal .cell { background: var(--bg); border-radius: 6px; min-height: 3.4rem; padding: 3px 4px 4px; display: flex; flex-direction: column; gap: 3px; }
+  .cal .cell.blank { background: transparent; }
+  .cal .num { font-size: .66rem; color: var(--muted); line-height: 1; }
+  .cal .chip { display: block; height: 9px; border-radius: 3px; transform-origin: left center; }
+  .chip.s { background: var(--blue); }
+  .chip.c { background: var(--yellow); }
+  .chip.v { background: var(--video); }
+  .cal.anim .chip { transform: scaleX(0); transition: transform .45s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0ms); }
+  .cal.anim.go .chip { transform: scaleX(1); }
+  .legend { display: flex; flex-wrap: wrap; gap: .3rem 1rem; margin: .8rem 0 .3rem; font-size: .85rem; color: var(--muted); }
+  .legend span { display: inline-flex; align-items: center; gap: .4rem; }
+  .legend i { width: 14px; height: 9px; border-radius: 3px; display: inline-block; }
+  .cal-note { font-size: .82rem; color: var(--muted); margin: 0; }
+
+  /* sections */
+  .block { padding-block: clamp(2.75rem, 6vw, 4.5rem); border-top: 1px solid var(--line); }
+  .block h2 { font-size: clamp(1.7rem, 3.6vw, 2.4rem); font-weight: 800; }
+  .block .intro { color: var(--muted); margin-top: 1rem; }
+
+  /* results */
+  .results { margin-top: 2rem; }
+  .result { display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); gap: .5rem 2rem; padding-block: 1.4rem; border-top: 1px solid var(--line); }
+  .result:last-child { border-bottom: 1px solid var(--line); }
+  .result h3 { font-size: 1.15rem; font-weight: 600; }
+  .result .who { color: var(--muted); font-size: .95rem; margin: .2rem 0 0; }
+  .deltas { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: .6rem; }
+  .delta { background: var(--delta-bg); color: var(--delta-ink); border-radius: 8px; padding: .25rem .65rem; font-weight: 600; font-size: .95rem; }
+  .raw { margin: 0; color: var(--muted); }
+  .raw strong { color: var(--ink); font-weight: 600; }
+
+  /* case studies */
+  .case { display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); gap: 1.25rem 2.5rem; padding-block: 2.5rem; border-top: 1px solid var(--line); }
+  .case:first-of-type { margin-top: 2rem; }
+  .case h3 { font-size: clamp(1.3rem, 2.4vw, 1.6rem); font-weight: 800; }
+  .case .meta { color: var(--muted); font-size: .95rem; margin-top: .6rem; }
+  .case .meta p { margin: 0 0 .15rem; }
+  .case h4 { font-family: "Instrument Sans", system-ui, sans-serif; font-size: 1rem; font-weight: 600; margin: 1.4rem 0 .35rem; }
+  .case h4:first-child { margin-top: 0; }
+  .case ul { list-style: disc; padding-left: 1.2rem; max-width: 66ch; }
+  .case li { margin-bottom: .4rem; }
+  .pills { display: flex; flex-wrap: wrap; gap: .5rem .6rem; margin-top: .9rem; }
+  .pills a { display: inline-block; border: 1px solid var(--line); background: var(--surface); border-radius: 999px; padding: .3rem .85rem; font-size: .92rem; text-decoration: none; }
+  .pills a:hover { border-color: var(--blue); }
+
+  /* projects */
+  .projects { margin-top: 2rem; }
+  .project { display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); gap: .3rem 2rem; padding-block: 1.1rem; border-top: 1px solid var(--line); }
+  .project:last-child { border-bottom: 1px solid var(--line); }
+  .project h3 { font-size: 1.05rem; font-weight: 600; }
+  .project p { margin: 0; color: var(--muted); }
+  .project a { font-weight: 600; white-space: nowrap; }
+
+  /* ai */
+  .ai-grid { display: grid; grid-template-columns: minmax(0, 15rem) minmax(0, 1fr); gap: 1.5rem 2.5rem; margin-top: 2rem; }
+  .ai-list dt { font-weight: 600; margin-top: 1.1rem; }
+  .ai-list dt:first-child { margin-top: 0; }
+  .ai-list dd { margin: .2rem 0 0; color: var(--muted); max-width: 62ch; }
+  .rules { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 1.1rem 1.25rem; margin-top: 1.75rem; }
+  .rules p { margin: 0; }
+
+  /* proof */
+  blockquote { margin: 2rem 0 0; padding: 0 0 0 1.25rem; border-left: 4px solid var(--yellow); max-width: 62ch; }
+  blockquote p { font-family: "Bricolage Grotesque", system-ui, sans-serif; font-size: clamp(1.25rem, 2.6vw, 1.6rem); line-height: 1.3; margin: 0 0 .8rem; }
+  blockquote footer { color: var(--muted); font-size: .95rem; }
+  .creds { margin-top: 2.25rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: .6rem 2rem; }
+  .creds li { padding: .6rem 0; border-top: 1px solid var(--line); }
+  .creds span { display: block; color: var(--muted); font-size: .92rem; }
+  .skills { margin-top: 1.5rem; color: var(--muted); max-width: 70ch; }
+
+  /* contact */
+  .contact h2 { font-size: clamp(1.9rem, 4.4vw, 3rem); max-width: 18ch; }
+  footer.site-footer { padding-block: 1.5rem 2.5rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+  footer.site-footer p { margin: 0 0 .3rem; max-width: none; }
+
+  @media (max-width: 820px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .result, .case, .project, .ai-grid { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .cal.anim .chip { transform: none; transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top">Akash Mishra</a>
+    <nav class="site-nav" aria-label="Sections">
+      <ul>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#ai">AI workflow</a></li>
+        <li><a href="#proof">Proof</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>I plan, publish and measure social media for small brands.</h1>
+        <p class="lead">I'm Akash, a social media marketer in Kolkata. I've run organic accounts for six brands, rebuilt an events brand's social presence, and use AI tools to move faster while keeping every post edited and every number checked.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="mailto:akashmishra1445@gmail.com">Email me</a>
+          <a class="btn" href="https://drive.google.com/file/d/1WzeUG9z_owAOQsRdj2EXismKyYQP8u1J/view?usp=drivesdk" target="_blank" rel="noopener">View resume</a>
+          <a class="btn" href="https://www.linkedin.com/in/akashmishra-smm/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <p class="status">Kolkata, India. Open to social media and digital marketing roles.</p>
+      </div>
+
+      <div class="cal-card" aria-label="Illustration of a monthly content calendar">
+        <h2 class="cal-title">A month of scheduled posts</h2>
+        <div class="cal anim" id="cal" role="img" aria-label="Calendar grid showing static posts, carousels and short videos scheduled on weekdays"></div>
+        <div class="legend">
+          <span><i style="background:var(--blue)"></i>Static post</span>
+          <span><i style="background:var(--yellow)"></i>Carousel</span>
+          <span><i style="background:var(--video)"></i>Short video</span>
+        </div>
+        <p class="cal-note">Illustration of the cadence I plan for each brand. Real calendars live in monday.com and are scheduled in OneUp.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="results">
+    <div class="wrap">
+      <h2>Results at Sao Digital</h2>
+      <p class="intro">Sep 10 to Dec 8, 2025, from platform analytics reports. Most accounts started small, so raw counts sit next to the percentages. I've listed the metrics that content influences most directly: output, views and engagement.</p>
+
+      <ul class="results">
+        <li class="result">
+          <div>
+            <h3>LinkedIn</h3>
+            <p class="who">B2B financial services brand</p>
+          </div>
+          <div>
+            <div class="deltas">
+              <span class="delta">Posts +425%</span>
+              <span class="delta">Impressions +243%</span>
+              <span class="delta">New followers +183%</span>
+            </div>
+            <p class="raw"><strong>21</strong> posts, <strong>120</strong> organic impressions, <strong>17</strong> new followers.</p>
+          </div>
+        </li>
+        <li class="result">
+          <div>
+            <h3>Facebook</h3>
+            <p class="who">Three brand pages</p>
+          </div>
+          <div>
+            <div class="deltas">
+              <span class="delta">Posts and reels +203%</span>
+              <span class="delta">Media views +40%</span>
+              <span class="delta">Reactions +35%</span>
+            </div>
+            <p class="raw"><strong>106</strong> posts and reels, <strong>66,033</strong> media views, <strong>495</strong> reactions.</p>
+          </div>
+        </li>
+        <li class="result">
+          <div>
+            <h3>YouTube</h3>
+            <p class="who">Children's book brand</p>
+          </div>
+          <div>
+            <div class="deltas">
+              <span class="delta">Channel built from its first uploads</span>
+            </div>
+            <p class="raw"><strong>11</strong> videos, <strong>2,332</strong> views, <strong>332</strong> minutes watched.</p>
+          </div>
+        </li>
+        <li class="result">
+          <div>
+            <h3>New channels</h3>
+            <p class="who">Instagram and TikTok</p>
+          </div>
+          <div>
+            <div class="deltas">
+              <span class="delta">Launched during the internship</span>
+            </div>
+            <p class="raw"><strong>2</strong> Instagram accounts (<strong>41</strong> posts) and <strong>1</strong> TikTok account (<strong>7</strong> videos).</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="work">
+    <div class="wrap">
+      <h2>Selected work</h2>
+
+      <article class="case">
+        <div>
+          <h3>One publishing pipeline for six brands</h3>
+          <div class="meta">
+            <p>Sao Digital</p>
+            <p>Social Media Manager, internship</p>
+            <p>Sep to Dec 2025</p>
+          </div>
+        </div>
+        <div>
+          <h4>The brief</h4>
+          <p>Keep organic social running for small-business clients across Facebook, Instagram, LinkedIn, Google Business Profile, TikTok and YouTube. Each brand needed its own voice, calendar and approvals.</p>
+          <h4>What I did</h4>
+          <ul>
+            <li>Planned monthly content calendars per brand in monday.com, mixing static posts, carousels and short videos.</li>
+            <li>Wrote detailed creative briefs for designers and video editors, so drafts arrived close to final.</li>
+            <li>Sent posts to clients through a review portal, handled revisions, then scheduled approved posts in OneUp.</li>
+            <li>Onboarded new clients with a three-post trial, delivered within three to five business days, so they could see the quality before committing.</li>
+            <li>Pulled monthly analytics reports across every platform to show what was working.</li>
+          </ul>
+          <h4>Outcome</h4>
+          <p>The numbers are in the results above. My supervisor's recommendation is in the proof section below.</p>
+        </div>
+      </article>
+
+      <article class="case">
+        <div>
+          <h3>Rebuilding an events brand's social presence</h3>
+          <div class="meta">
+            <p>RR Blessing, weddings and events</p>
+            <p>Freelance Social Media Manager, internship</p>
+            <p>Feb to Mar 2026</p>
+          </div>
+        </div>
+        <div>
+          <h4>The brief</h4>
+          <p>Turn a quiet profile into a steady source of enquiries for weddings, destination events and full-service packages.</p>
+          <h4>What I did</h4>
+          <ul>
+            <li>Rewrote the profile and bio with search-friendly keywords.</li>
+            <li>Wrote a lead-generation content plan built around a few repeatable series, including a complete-package pitch (one team instead of booking vendors separately) and a venue showcase for destination weddings.</li>
+            <li>Produced statics, carousels, reels and stories, and set up daily publishing.</li>
+            <li>Ended every format with one clear ask: DM or call.</li>
+          </ul>
+          <div class="pills">
+            <a href="https://drive.google.com/file/d/1z_BIgxNCmTUfMBecVZltH1bYnOJ3XfH5/view?usp=drivesdk" target="_blank" rel="noopener">Lead-generation content plan (PDF)</a>
+            <a href="https://drive.google.com/file/d/1T07YEb-iEdcuLi-eU_99JfCQ_G1Zu2Yf/view?usp=drivesdk" target="_blank" rel="noopener">Complete-package post</a>
+            <a href="https://drive.google.com/file/d/10WZD1yuJrQ7-Fe9g_ObDhunakAw_Csk8/view?usp=drivesdk" target="_blank" rel="noopener">Venue spotlight post</a>
+            <a href="https://drive.google.com/file/d/1PLUsXgk9oyEycJUlhEQK626hFA1NFsgI/view?usp=drivesdk" target="_blank" rel="noopener">Reel 1</a>
+            <a href="https://drive.google.com/file/d/1XVWuJmt1rgJLHwaJv6FM04ingMPlZMqG/view?usp=drivesdk" target="_blank" rel="noopener">Reel 2</a>
+            <a href="https://drive.google.com/file/d/15jArh4ub6MZM3FfU1Lo4Wg7vF6BF7-Ah/view?usp=drivesdk" target="_blank" rel="noopener">Reel 3</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div>
+          <h3>Ten brands, one meme format</h3>
+          <div class="meta">
+            <p>Self-initiated creative work</p>
+            <p>Not commissioned by the brands</p>
+          </div>
+        </div>
+        <div>
+          <h4>The idea</h4>
+          <p>A familiar Hindi film-dialogue meme, reworked so ten well-known brands each get a joke in their own product's voice, including Amul, Dettol, Fevicol, Zomato and Dabur. Built for saves and shares rather than likes.</p>
+          <h4>Also in the folder</h4>
+          <p>Research and a plan for a LinkedIn carousel on Titan's "Made in India" story.</p>
+          <div class="pills">
+            <a href="https://drive.google.com/file/d/1jTRwwg58lks7olWAZGuLDySqA9lbn_QN/view?usp=drivesdk" target="_blank" rel="noopener">Brand meme carousel (PDF)</a>
+            <a href="https://drive.google.com/file/d/1B2lcfwneWstlC8I8EqfF2nS81HApdyzB/view?usp=drivesdk" target="_blank" rel="noopener">Titan carousel research (PDF)</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="block" id="projects">
+    <div class="wrap">
+      <h2>Strategy and paid media projects</h2>
+      <p class="intro">Course projects built on real brands. They are training briefs, not client work, and I've labelled them that way.</p>
+
+      <div class="projects">
+        <div class="project">
+          <h3>Just Herbs social media audit</h3>
+          <div>
+            <p>Audited five channels for a brand with about 250K Instagram followers. Found low engagement for that audience size and almost no community formats, then built a three-month content calendar. <a href="https://drive.google.com/file/d/1TqnvlXtUA171wN_NYEe5VfhU3DppYMx2/view?usp=drivesdk" target="_blank" rel="noopener">Open PDF</a></p>
+          </div>
+        </div>
+        <div class="project">
+          <h3>AwayTravel three-month plan</h3>
+          <div>
+            <p>Three campaign ideas, a user-generated content hashtag, an influencer shortlist and a paid plan for a Gen Z audience. <a href="https://drive.google.com/file/d/1RaPtqqas6DR-otQgnyJDEvs6g5Tiw1WQ/view?usp=drivesdk" target="_blank" rel="noopener">Open PDF</a></p>
+          </div>
+        </div>
+        <div class="project">
+          <h3>Zepto 360° marketing plan</h3>
+          <div>
+            <p>An integrated plan covering social, paid ads, SEO and app marketing for a 10-minute delivery brand. <a href="https://drive.google.com/file/d/192_G950yF42TJzCUz72mcbau2Tn80iCj/view?usp=drivesdk" target="_blank" rel="noopener">Open PDF</a></p>
+          </div>
+        </div>
+        <div class="project">
+          <h3>Made With Spin website and SEO</h3>
+          <div>
+            <p>Audited the brand's site (33 of 92 images had no alt text, and the meta description ran to 283 characters), then built a WordPress site with Elementor and a three-month SEO plan. <a href="https://drive.google.com/file/d/1bqnL-Ni0G0zPgcO3xtV2XGohv_15bPSk/view?usp=drivesdk" target="_blank" rel="noopener">Open PDF</a></p>
+          </div>
+        </div>
+        <div class="project">
+          <h3>Mahindra XUV400 Google Ads plan</h3>
+          <div>
+            <p>A ₹10,00,000 Search and Display plan targeting test-drive leads in Mumbai, Pune and Bengaluru. <a href="https://drive.google.com/file/d/17MZ1nILHg21TAD-7FCb4vuRTS55GM4_2/view?usp=drivesdk" target="_blank" rel="noopener">Open PDF</a></p>
+          </div>
+        </div>
+        <div class="project">
+          <h3>GA4 funnel analysis</h3>
+          <div>
+            <p>Found 19-second homepage engagement and a 99% drop between page view and purchase, then proposed fixes for the homepage and product lists. <a href="https://drive.google.com/file/d/1OTO1ETH5a8CrEfekAS-qUxuc4VSzo922/view?usp=drivesdk" target="_blank" rel="noopener">Open PDF</a></p>
+          </div>
+        </div>
+        <div class="project">
+          <h3>Live ad tests</h3>
+          <div>
+            <p>A ₹500 Facebook Ads test that reached about 10,000 impressions and 249 link clicks, and a ₹500 Google Search campaign built on high-volume, low-cost keywords. <a href="https://drive.google.com/file/d/19d06hBAxZWtaxexww5ME_e_3BMyHPTf5/view?usp=drivesdk" target="_blank" rel="noopener">Facebook PDF</a> and <a href="https://drive.google.com/file/d/1OGlYiB_5ne9jYiMVOjomyB7WV3xFgrjp/view?usp=drivesdk" target="_blank" rel="noopener">Google PDF</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="ai">
+    <div class="wrap">
+      <h2>How I use AI</h2>
+      <div class="ai-grid">
+        <p class="intro" style="margin-top:0">AI shortens the first draft. Judgement, editing and accuracy stay with me.</p>
+        <div>
+          <dl class="ai-list" style="margin:0">
+            <dt>Research</dt>
+            <dd>ChatGPT, Gemini and Claude help me map a brand's audience, competitors and post angles quickly. I still read the brand's own channels before writing anything.</dd>
+            <dt>Drafting</dt>
+            <dd>First-pass captions and hooks, which I rewrite to fit the brand's voice.</dd>
+            <dt>Creative</dt>
+            <dd>AI-generated reels, UGC-style ad concepts and post visuals for testing ideas fast.</dd>
+            <dt>Reporting</dt>
+            <dd>Plain-language summaries of platform exports, with every figure checked against the source.</dd>
+          </dl>
+          <div class="rules">
+            <p>My rules: nothing goes to a client unedited, every number is checked against the platform report, and AI-made work is always labelled as AI-made.</p>
+          </div>
+          <div class="pills">
+            <a href="https://drive.google.com/drive/folders/1YtFnnDcmHJtr9TAEVf8jLpHY55Ja_Mfm" target="_blank" rel="noopener">AI-generated reels</a>
+            <a href="https://drive.google.com/drive/folders/1A7t9jDC38fVQ5KNCSVMvX5d2PRK3FggS" target="_blank" rel="noopener">AI-generated UGC ads</a>
+            <a href="https://drive.google.com/drive/folders/1C-HFC8vDm4tF313vp3Rp0YdMaP9jfpd4" target="_blank" rel="noopener">AI-generated social posts</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="proof">
+    <div class="wrap">
+      <h2>Proof</h2>
+      <blockquote>
+        <p>He was proactive, responsive, and a distinct asset to the client management team.</p>
+        <footer>Bhavesh Kapadia, Founder and Head Account Manager, Sao Digital. LinkedIn recommendation, December 2, 2025. <a href="https://drive.google.com/file/d/1ZkOayBFlhI9Z2Ss-t2fwzJlRnkgWuboY/view?usp=drivesdk" target="_blank" rel="noopener">Read the full recommendation</a></footer>
+      </blockquote>
+
+      <ul class="creds">
+        <li>Certificate of internship completion<span>Sao Digital, Social Media Management, 3 months. <a href="https://drive.google.com/file/d/1uHmjYZrj5tngZbUuZZC0_BpglwdqQd1Z/view?usp=drivesdk" target="_blank" rel="noopener">View</a></span></li>
+        <li>Social Media Marketing<span>HubSpot Academy</span></li>
+        <li>Google Search and Display Ads<span>Google Skillshop</span></li>
+        <li>Facebook and Instagram Ads<span>Indian Institute of Digital Education</span></li>
+        <li>Certification in Digital Marketing<span>UpGrad</span></li>
+        <li>Digital Marketing Placement Guarantee Course<span>Internshala</span></li>
+      </ul>
+
+      <p class="skills"><strong>Skills and tools.</strong> Content strategy and calendars, copywriting, community management, Instagram, Facebook, LinkedIn, YouTube and TikTok, Facebook Ads, Google Ads, SEO and keyword research, email marketing, Google Analytics and Search Console, WordPress and Elementor, Canva, monday.com, OneUp, Markup, ChatGPT, Gemini and Claude.</p>
+    </div>
+  </section>
+
+  <section class="block contact" id="contact">
+    <div class="wrap">
+      <h2>Let's talk about your next month of content.</h2>
+      <div class="cta-row">
+        <a class="btn primary" href="mailto:akashmishra1445@gmail.com">akashmishra1445@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/akashmishra-smm/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://drive.google.com/file/d/1WzeUG9z_owAOQsRdj2EXismKyYQP8u1J/view?usp=drivesdk" target="_blank" rel="noopener">Resume (PDF)</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Client names are withheld to respect confidentiality. Course projects are labelled as such. AI-generated work is labelled as AI-generated.</p>
+    <p>Updated September 2026.</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    // s = static, c = carousel, v = short video. Index 0 is a Monday; the month starts on a Wednesday.
+    var plan = [
+      "", "", "s", "c", "s", "", "",
+      "s", "v", "c", "s", "sv", "", "",
+      "c", "s", "v", "s", "c", "", "",
+      "s", "c", "s", "v", "s", "", "",
+      "s", "c", "v", "s", "", "", ""
+    ];
+    var cal = document.getElementById("cal");
+    if (!cal) return;
+    var html = days.map(function (d) { return '<div class="dow">' + d + "</div>"; }).join("");
+    var delay = 0;
+    for (var i = 0; i < 35; i++) {
+      var day = i - 1; // day 1 sits in cell index 2
+      if (day < 1 || day > 30) { html += '<div class="cell blank"></div>'; continue; }
+      var chips = "";
+      plan[i].split("").forEach(function (t) {
+        chips += '<span class="chip ' + t + '" style="--d:' + delay + 'ms"></span>';
+        delay += 28;
+      });
+      html += '<div class="cell"><span class="num">' + day + "</span>" + chips + "</div>";
+    }
+    cal.innerHTML = html;
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { cal.classList.add("go"); });
+    });
+  })();
+</script>
+</body>
+</html>
